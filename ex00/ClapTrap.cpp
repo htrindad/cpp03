@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 16:55:23 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/10 17:28:09 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/10 17:31:08 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ ClapTrap::ClapTrap(ClapTrap const &ref)
 ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
+	hp = 10;
+	ep = 10;
+	ad = 0;
 	std::cout << "ClapTrap manually created using the name constructor\n";
 }
 ClapTrap &ClapTrap::operator=(ClapTrap const &ref)
