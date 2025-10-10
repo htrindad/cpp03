@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -O3 -std=c++98
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	c++ $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:

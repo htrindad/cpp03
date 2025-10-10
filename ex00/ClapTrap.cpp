@@ -6,15 +6,27 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 16:55:23 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/10 17:14:37 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/10 17:28:09 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
 
 // CDO
-ClapTrap::ClapTrap() { std::cout << "ClapTrap object created\n"; }
-ClapTrap::~ClapTrap() { std::cout << "ClapTrap object destroyed\n"; }
+ClapTrap::ClapTrap()
+{
+	hp = 10;
+	ep = 10;
+	ad = 0;
+	std::cout << "ClapTrap object created\n";
+}
+ClapTrap::~ClapTrap()
+{
+	hp = 10;
+	ep = 10;
+	ad = 0;
+	std::cout << "ClapTrap object destroyed\n";
+}
 ClapTrap::ClapTrap(ClapTrap const &ref)
 {
 	hp = ref.hp;
@@ -35,11 +47,12 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &ref)
 	ad = ref.ad;
 	name = ref.name;
 	std::cout << "ClapTrap objected copied from reference\n";
+	return *this;
 }
 
 // Methods
 
-void ClapTrap::attack(std::string &target)
+void ClapTrap::attack(const std::string &target)
 {
 	if (!hp)
 	{
@@ -83,3 +96,11 @@ uint32_t ClapTrap::getHp() const { return hp; }
 uint32_t ClapTrap::getEp() const { return ep; }
 
 uint32_t ClapTrap::getAd() const { return ad; }
+
+std::string ClapTrap::getName() const { return name; }
+
+std::ostream &operator<<(std::ostream &out, const ClapTrap &clap)
+{
+	out << "ClapTrap " << clap.getName() << '\n';
+	return out;
+}
