@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 16:55:23 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/10 17:09:03 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/10 17:14:37 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,11 @@ void ClapTrap::beRepaired(uint32_t amount)
 		hp = std::numeric_limits<unsigned int>::max();
 	else
 		hp += amount;
-	std::cout << "ClapTrap " << name << " repairs " << amount << " of HP!\n";
+	std::cout << "ClapTrap " << name << " repairs " << amount << " of HP, having a total of " << hp << " HP!\n";
 }
+
+uint32_t ClapTrap::getHp() const { return hp; }
+
+uint32_t ClapTrap::getEp() const { return ep; }
+
+uint32_t ClapTrap::getAd() const { return ad; }

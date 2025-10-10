@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 16:03:40 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/10 16:09:20 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/10 17:14:02 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class ClapTrap
 		void attack(const std::string &target);
 		void takeDamage(uint32_t ammount);
 		void beRepaired(uint32_t amount);
+		uint32_t getHp() const ;
+		uint32_t getEp() const ;
+		uint32_t getAd() const ;
 };
 
 std::ostream &operator<<(std::ostream &out, const Claptrap &ref);
