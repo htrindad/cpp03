@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 16:55:23 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/11 16:40:36 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:03:12 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,10 @@ ClapTrap::ClapTrap()
 	ad = 0;
 	std::cout << "ClapTrap object created\n";
 }
-ClapTrap::~ClapTrap()
-{
-	hp = 10;
-	ep = 10;
-	ad = 0;
-	std::cout << "ClapTrap object destroyed\n";
-}
+ClapTrap::~ClapTrap() { std::cout << "ClapTrap object destroyed\n"; }
 ClapTrap::ClapTrap(ClapTrap const &ref)
 {
-	hp = ref.hp;
-	ep = ref.hp;
-	ad = ref.ad;
-	name = ref.name;
+	*this = ref;
 	std::cout << "ClapTrap objected created through reference object\n";
 }
 ClapTrap::ClapTrap(std::string name)
@@ -102,6 +93,14 @@ uint32_t ClapTrap::getEp() const { return ep; }
 uint32_t ClapTrap::getAd() const { return ad; }
 
 std::string ClapTrap::getName() const { return name; }
+
+void ClapTrap::setName(std::string name) { this->name = name; }
+
+void ClapTrap::setHp(uint32_t amount) { hp = amount; }
+
+void ClapTrap::setEp(uint32_t amount) { ep = amount; }
+
+void ClapTrap::setAd(uint32_t amount) { ad = amount; }
 
 std::ostream &operator<<(std::ostream &out, const ClapTrap &clap)
 {

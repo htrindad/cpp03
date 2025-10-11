@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 16:03:40 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/11 16:40:17 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/11 16:44:26 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ class ClapTrap
 		uint32_t getEp() const ;
 		uint32_t getAd() const ;
 		std::string getName() const ;
+		void setName(std::string name);
+		void setHp(uint32_t amount);
+		void setEp(uint32_t amount);
+		void setAd(uint32_t amount);
 };
 
 std::ostream &operator<<(std::ostream &out, const ClapTrap &ref);
