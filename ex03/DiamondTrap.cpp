@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:41:37 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/11 18:27:47 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/11 18:33:14 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ void DiamondTrap::setDefault()
 // CDO
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
-	name = ClapTrap::getName();
+	name = ClapTrap::name;
 	setDefault();
 	std::cout << "DiamondTrap " << name << " default constructor called\n";
 }
 DiamondTrap::~DiamondTrap() { std::cout << "DiamondTrap " << name << " destructor called\n"; }
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
-	name = ClapTrap::getName();
+	this->name = name;
+	ClapTrap::name = name;
 	setDefault();
 	std::cout << "DiamondTrap " << name << " name constructor called\n";
 }
@@ -42,7 +43,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap &ref): ClapTrap(ref), ScavTrap(ref), 
 }
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &ref)
 {
-	name = ref.ClapTrap::getName();
+	name = ref.name;
+	ClapTrap::name = ref.ClapTrap::name;
 	hp = ref.FragTrap::getHp();
 	ep = ref.ScavTrap::getEp();
 	ad = ref.FragTrap::getAd();
@@ -52,4 +54,4 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &ref)
 
 void DiamondTrap::attack(const std::string &target) { ScavTrap::attack(target); }
 
-void DiamondTrap::whoAmI() { std::cout << "Hi, I'm " << name << " and my ClapTrap name is " << ClapTrap::getName() << '\n'; }
+void DiamondTrap::whoAmI() { std::cout << "Hi, I'm " << name << " and my ClapTrap name is " << ClapTrap::name << '\n'; }
