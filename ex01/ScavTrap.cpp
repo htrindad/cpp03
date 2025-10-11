@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 16:19:42 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/11 17:05:01 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:13:37 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // Private methods
 void ScavTrap::setDefault()
 {
-	setName("Default");
 	setHp(100);
 	setEp(50);
 	setAd(25);
@@ -29,10 +28,9 @@ ScavTrap::ScavTrap()
 	std::cout << "ScavTrap default constructor called\n";
 }
 ScavTrap::~ScavTrap() { std::cout << "ScavTrap destructor called\n"; }
-ScavTrap::ScavTrap(const std::string name) : ClapTrap()
+ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 {
 	setDefault();
-	setName(name);
 	std::cout << "ScavTrap name constructor called with name " << name << '\n';
 }
 ScavTrap::ScavTrap(const ScavTrap &ref)
