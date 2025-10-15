@@ -6,7 +6,7 @@
 /*   By: htrindad <htrindad@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 16:19:42 by htrindad          #+#    #+#             */
-/*   Updated: 2025/10/11 17:13:37 by htrindad         ###   ########.fr       */
+/*   Updated: 2025/10/15 13:45:20 by htrindad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ScavTrap::setDefault()
 {
 	setHp(100);
 	setEp(50);
-	setAd(25);
+	setAd(20);
 	gk = false;
 }
 
